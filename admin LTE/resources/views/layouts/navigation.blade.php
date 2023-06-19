@@ -22,19 +22,23 @@
       <ul class="navbar-nav ml-auto">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-
             <x-responsive-nav-link :href="route('logout')"
                     onclick="event.preventDefault();
                                 this.closest('form').submit();">
                 {{ __('Log Out') }}
             </x-responsive-nav-link>
         </form>
-        
-        <li class="nav-item">
+        <div class="user-panel d-flex">
+        <a href="/profile">  <div class="image" >
+            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          </div> </a>
+          
+        </div>
+        {{-- <li class="nav-item">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
             <i class="fas fa-th-large"></i>
           </a>
-        </li>
+        </li> --}}
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -356,7 +360,7 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview">
+            {{-- <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
@@ -588,14 +592,14 @@
                 <i class="nav-icon far fa-circle text-info"></i>
                 <p>Informational</p>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
     </aside>
-  
+</div>
       <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
